@@ -5,29 +5,42 @@ import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
 function App() {
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
-        <h4>Don't forget it!</h4>
-      </header>
+    <Router>
+      <div className='App'>
+        
+        <header className='App-header'>
+          <h1 className='App-title'>Feedback!</h1>
+          <h4>Don't forget it!</h4>
+        </header>
 
-      {/* Page one */}
-      <Feelings />
+        <Route exact path="/">
+          {/* Page one */}
+          <Feelings />
+        </Route>
 
-      {/* Page two */}
-      <Understanding />
+        <Route exact path="/page-1">
+          {/* Page two */}
+          <Understanding />
+        </Route>
 
-      {/* Page three */}
-      <Support />
+        <Route exact path="/page-2">
+          {/* Page three */}
+          <Support />
+        </Route>
 
-      {/* Page four */}
-      <Comments />
-    </div>
+        <Route exact path="/page-3">
+          {/* Page four */}
+          <Comments />
+        </Route>
+
+      </div>
+    </Router>
   );
 }
 
