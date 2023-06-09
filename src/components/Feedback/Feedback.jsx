@@ -1,7 +1,28 @@
-
+import axios from 'axios'
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 function Feedback() {
 
+    const dispatch = useDispatch();
+    const feedBackData = useSelector( store => store.feedbackData)
+
+    const fetchFeedback = () => {
+        axios.get( '/feedback')
+        .then ( response  => {
+            dispatch( { type: 'GET_FEEDBACK', payload: response.data })
+        })
+        .catch( err => {
+            console.log(`Could not GET Feedback ${err}`);
+            alert(`Try again later`)
+        })
+    }
+
+
+    useEffect( () => {
+        fetchFeedback()
+    }, [])
 
     return (
         <>
@@ -10,28 +31,27 @@ function Feedback() {
 
         <br></br><br></br>
        
+            {feedBackData.map( (data, i) => (
+        <div key={i}>
+            
+                {/* grab data Feelings from server */}
+                <p>Feelings: {data.feeling} </p>
 
-        {/* grab data Feelings from server */}
-        <p>Feelings: </p>
+                <br></br>
+                
+                {/* grab data Understanding from server */}
+                <p>Understanding: {data.understanding} </p>
 
-        <br></br><br></br>
-        
+                <br></br>
+                {/* grab data Support from server */}
+                <p>Support: {data.support} </p>
 
-        {/* grab data Understanding from server */}
-        <p>Understanding: </p>
+                <br></br>
 
-        <br></br><br></br>
-        
-
-        {/* grab data Support from server */}
-        <p>Support: </p>
-
-        <br></br><br></br>
-        
-
-        {/* grab comments from server */}
-        <p>Comments: </p>
-
+                {/* grab comments from server */}
+                <p>Comments: {data.comments} </p>
+        </div>
+            ))}
         </>
     )
 }

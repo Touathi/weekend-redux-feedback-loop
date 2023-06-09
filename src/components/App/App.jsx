@@ -20,28 +20,28 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
 
-        <Route exact path="/">
           {/* Page one */}
+        <Route exact path="/">
           <Feelings />
         </Route>
-
-        <Route exact path="/page-1">
+        
           {/* Page two */}
+        <Route exact path="/page-1">
           <Understanding />
         </Route>
 
-        <Route exact path="/page-2">
           {/* Page three */}
+        <Route exact path="/page-2">
           <Support />
         </Route>
 
-        <Route exact path="/page-3">
           {/* Page four */}
+        <Route exact path="/page-3">
           <Comments />
         </Route>
 
+        {/* Page 5/ Review Your Feedback */}
         <Route exact path="/page-4">
-          {/* Page 5/ Review Your Feedback */}
           <Feedback />
         </Route>
 
