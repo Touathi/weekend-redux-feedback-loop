@@ -18,7 +18,6 @@ function Feelings() {
         history.push('/page-1')
         
         dispatch( {type: "GET_FEELING", payload: feeling} )
-        
         setFeeling('')
     };
 
