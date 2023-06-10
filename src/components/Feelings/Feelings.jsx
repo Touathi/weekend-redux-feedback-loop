@@ -12,6 +12,9 @@ function Feelings() {
 
     const handleNext = (event) => {
         event.preventDefault();
+
+
+        // go to next page
         history.push('/page-1')
         
         dispatch( {type: "GET_FEELING", payload: feeling} )
@@ -27,18 +30,18 @@ function Feelings() {
 
         <br></br><br></br><br></br>
         
-        <form>
+        <form onSubmit={handleNext}>
             <label htmlFor="Feeling?">Feeling?</label>
             <input 
                 type="number"
                 id='feelingInput' 
                 name='feeling'
                 value={feeling}
-                onChange={(evt) => Number((setFeeling(evt.target.value)))}
+                onChange={(evt) => (setFeeling(evt.target.value))}
                 // Fix so that a value is require before going to next page
                 required
             />
-            <button onClick={handleNext}>Next</button>
+            <button type='submit'>Next</button>
         </form>
         </>
     )

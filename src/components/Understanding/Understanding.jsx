@@ -26,7 +26,7 @@ function Understanding() {
 
         <br></br><br></br><br></br>
         
-        <form>
+        <form onSubmit={handleNext}>
             <label htmlFor="understanding?">Understanding?</label>
             <input 
                 type="number"
@@ -37,7 +37,7 @@ function Understanding() {
                 // Fix so that a value is require before going to next page
                 required
             />
-            <button onClick={handleNext}>Next</button>
+            <button type='submit'>Next</button>
         </form>
         </>
     )

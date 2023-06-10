@@ -34,6 +34,7 @@ function Comments() {
                 name='comments'
                 value={comments}
                 onChange={(evt) => (setComments(evt.target.value))}
+                required
             />
             <button onClick={handleNext}>Next</button>
         </form>
