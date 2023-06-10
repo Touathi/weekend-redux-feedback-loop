@@ -10,6 +10,7 @@ function Feedback() {
     const understanding = useSelector( store => store.understanding)
     const support = useSelector( store => store.support)
     const comment = useSelector( store => store.comment)
+    
     // const feedBackData = useSelector( store => store.feedbackData)
 
     // const fetchFeedback = () => {

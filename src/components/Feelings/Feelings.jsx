@@ -9,6 +9,7 @@ function Feelings() {
     const history = useHistory()
     const [feeling, setFeeling] = useState('')
 
+
     const handleNext = (event) => {
         event.preventDefault();
         history.push('/page-2')
@@ -26,13 +27,16 @@ function Feelings() {
 
         <br></br><br></br><br></br>
         
-        <form >
+        <form>
             <label htmlFor="Feeling?">Feeling?</label>
             <input 
                 type="number"
                 id='feelingInput' 
+                name='feeling'
                 value={feeling}
                 onChange={(evt) => (setFeeling(evt.target.value))}
+                // Fix so that a value is require before going to next page
+                required
             />
             <button onClick={handleNext}>Next</button>
         </form>
