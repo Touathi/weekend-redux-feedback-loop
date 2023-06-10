@@ -12,14 +12,14 @@ function Feelings() {
 
     const handleNext = (event) => {
         event.preventDefault();
-        history.push('/page-2')
+        history.push('/page-1')
         
         dispatch( {type: "GET_FEELING", payload: feeling} )
         
         setFeeling('')
     };
 
-    console.log(feeling);
+    console.log(`I rate my feelings as ${feeling}`);
 
     return (
         <>
