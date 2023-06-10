@@ -34,7 +34,7 @@ function Feelings() {
                 id='feelingInput' 
                 name='feeling'
                 value={feeling}
-                onChange={(evt) => (setFeeling(evt.target.value))}
+                onChange={(evt) => Number((setFeeling(evt.target.value)))}
                 // Fix so that a value is require before going to next page
                 required
             />

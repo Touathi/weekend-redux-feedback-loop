@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/">
           <Feelings />
         </Route>
-        
+
           {/* Page two */}
         <Route exact path="/page-1">
           <Understanding />
@@ -40,11 +40,15 @@ function App() {
           <Comments />
         </Route>
 
-        {/* Page 5/ Review Your Feedback */}
+        {/* Page 5 Review Your Feedback */}
         <Route exact path="/page-4">
           <Feedback />
         </Route>
 
+        {/* Page 6 Leave New Feedback */}
+        <Route exact path="/page-5">
+          <NewFeedback />
+        </Route>
       </div>
     </Router>
   );

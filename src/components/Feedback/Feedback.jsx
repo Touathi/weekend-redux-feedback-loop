@@ -9,10 +9,23 @@ function Feedback() {
     const feeling = useSelector( store => store.feeling)
     const understanding = useSelector( store => store.understanding)
     const support = useSelector( store => store.support)
-    const comment = useSelector( store => store.comment)
+    const comments = useSelector( store => store.comments)
 
     // AXIOX.POST
-    
+    const postFeedback = () => {
+        axios.post("/feedback" , {
+            feeling: feeling,
+            understanding: understanding,
+            support: support,
+            comments: comments
+        })
+        .then (response => {
+            console.log(`Submitting feedbacks to server success ${response}`);
+        })
+        .catch ( err => {
+            console.log(`Error in submitting feedback to server ${err}`);
+        })
+    }
 
     // const feedBackData = useSelector( store => store.feedbackData)
 
@@ -55,10 +68,10 @@ function Feedback() {
                 <br></br>
 
                 {/* grab comments from server */}
-                <p>Comments: {comment} </p>
+                <p>Comments: {comments} </p>
         </div>
 
-        <button>SUBMIT</button>
+        <button onClick={postFeedback}>SUBMIT</button>
 
         </>
     )

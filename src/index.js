@@ -50,7 +50,7 @@ const support = (state = [], action) => {
 }
 
 // comment reducer data
-const comment = (state = [], action) => {
+const comments = (state = [], action) => {
 
     if (action.type === 'GET_COMMENTS') {
         return action.payload
@@ -81,7 +81,7 @@ const reduxStore = createStore(
         feeling,
         understanding,
         support,
-        comment
+        comments
     })
 )
 
