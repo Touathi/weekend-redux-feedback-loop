@@ -13,7 +13,7 @@ const feeling = (state = [], action) => {
     if (action.type === 'GET_FEELING') {
         return action.payload
     } 
-        else if (action.type === 'GET_SUBMIT') {
+        else if (action.type === 'GET_NEW_FEEDBACK') {
 
             return state = []
     }
@@ -27,7 +27,7 @@ const understanding = (state = [], action) => {
     if (action.type === 'GET_UNDERSTANDING') {
         return action.payload
     } 
-        else if (action.type === 'GET_SUBMIT') {
+        else if (action.type === 'GET_NEW_FEEDBACK') {
 
             return state = []
     }
@@ -41,7 +41,7 @@ const support = (state = [], action) => {
     if (action.type === 'GET_SUPPORT') {
         return action.payload
     } 
-        else if (action.type === 'GET_SUBMIT') {
+        else if (action.type === 'GET_NEW_FEEDBACK') {
 
             return state = []
     }
@@ -55,7 +55,7 @@ const comment = (state = [], action) => {
     if (action.type === 'GET_COMMENTS') {
         return action.payload
     } 
-        else if (action.type === 'GET_SUBMIT') {
+        else if (action.type === 'GET_NEW_FEEDBACK') {
 
             return state = []
     }
@@ -69,11 +69,7 @@ const feedbackData = (state = [], action) => {
     if (action.type === 'GET_FEEDBACK') {
         return action.payload
     } 
-        else if (action.type === 'GET_SUBMIT') {
 
-            return state = []
-    }
-    
     return state;
 }
 
