@@ -2,8 +2,11 @@ import axios from 'axios'
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function Feedback() {
+
+    const history = useHistory()
 
     const dispatch = useDispatch();
     const feeling = useSelector( store => store.feeling)
@@ -13,6 +16,9 @@ function Feedback() {
 
     // AXIOX.POST
     const postFeedback = () => {
+
+        
+
         axios.post("/feedback" , {
             feeling: feeling,
             understanding: understanding,
@@ -20,11 +26,15 @@ function Feedback() {
             comments: comments
         })
         .then (response => {
-            console.log(`Submitting feedbacks to server success ${response}`);
+            console.log(`Submitting feedbacks to server success`);
         })
         .catch ( err => {
             console.log(`Error in submitting feedback to server ${err}`);
         })
+
+        history.push('/page-5')
+
+        
     }
 
     // const feedBackData = useSelector( store => store.feedbackData)

@@ -6,6 +6,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Feedback from '../Feedback/Feedback';
+import NewFeedback from '../NewFeedback/NewFeedback';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
