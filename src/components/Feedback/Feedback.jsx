@@ -10,7 +10,10 @@ function Feedback() {
     const understanding = useSelector( store => store.understanding)
     const support = useSelector( store => store.support)
     const comment = useSelector( store => store.comment)
+
+    // AXIOX.POST
     
+
     // const feedBackData = useSelector( store => store.feedbackData)
 
     // const fetchFeedback = () => {
@@ -54,6 +57,8 @@ function Feedback() {
                 {/* grab comments from server */}
                 <p>Comments: {comment} </p>
         </div>
+
+        <button>SUBMIT</button>
 
         </>
     )

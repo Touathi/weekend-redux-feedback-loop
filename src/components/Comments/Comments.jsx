@@ -34,8 +34,6 @@ function Comments() {
                 name='comments'
                 value={comments}
                 onChange={(evt) => (setComments(evt.target.value))}
-                // Fix so that a value is require before going to next page
-                required
             />
             <button onClick={handleNext}>Next</button>
         </form>
