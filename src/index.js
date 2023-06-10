@@ -52,7 +52,7 @@ const support = (state = [], action) => {
 // comment reducer data
 const comment = (state = [], action) => {
 
-    if (action.type === 'GET_COMMENT') {
+    if (action.type === 'GET_COMMENTS') {
         return action.payload
     } 
         else if (action.type === 'GET_SUBMIT') {

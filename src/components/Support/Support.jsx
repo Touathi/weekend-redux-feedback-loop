@@ -11,7 +11,7 @@ function Support() {
 
     const handleNext = (event) => {
         event.preventDefault();
-        history.push('/page-4')
+        history.push('/page-3')
         
         dispatch( {type: "GET_SUPPORT", payload: support} )
         
